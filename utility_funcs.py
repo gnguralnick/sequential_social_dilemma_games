@@ -78,16 +78,17 @@ def return_view(grid, pos, row_size, col_size):
     -------
     view: (np.ndarray) - a slice of the map for the agent to see
     """
-    x, y = pos
-    left_edge = x - col_size
-    right_edge = x + col_size
-    top_edge = y - row_size
-    bot_edge = y + row_size
-    pad_mat, left_pad, top_pad = pad_if_needed(left_edge, right_edge, top_edge, bot_edge, grid)
-    x += left_pad
-    y += top_pad
-    view = pad_mat[x - col_size : x + col_size + 1, y - row_size : y + row_size + 1]
-    return view
+    # x, y = pos
+    # left_edge = x - col_size
+    # right_edge = x + col_size
+    # top_edge = y - row_size
+    # bot_edge = y + row_size
+    # pad_mat, left_pad, top_pad = pad_if_needed(left_edge, right_edge, top_edge, bot_edge, grid)
+    # x += left_pad
+    # y += top_pad
+    # view = pad_mat[x - col_size : x + col_size + 1, y - row_size : y + row_size + 1]
+    # return view
+    return grid
 
 
 def pad_if_needed(left_edge, right_edge, top_edge, bot_edge, matrix):

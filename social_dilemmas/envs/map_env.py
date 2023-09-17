@@ -403,15 +403,15 @@ class MapEnv(MultiAgentEnv):
             row + self.map_padding - self.view_len : row + self.map_padding + self.view_len + 1,
             col + self.map_padding - self.view_len : col + self.map_padding + self.view_len + 1,
         ]
-        if agent.orientation == "UP":
-            rotated_view = view_slice
-        elif agent.orientation == "LEFT":
-            rotated_view = np.rot90(view_slice)
-        elif agent.orientation == "DOWN":
-            rotated_view = np.rot90(view_slice, k=2)
-        elif agent.orientation == "RIGHT":
-            rotated_view = np.rot90(view_slice, k=1, axes=(1, 0))
-        return rotated_view
+        # if agent.orientation == "UP":
+        #     rotated_view = view_slice
+        # elif agent.orientation == "LEFT":
+        #     rotated_view = np.rot90(view_slice)
+        # elif agent.orientation == "DOWN":
+        #     rotated_view = np.rot90(view_slice, k=2)
+        # elif agent.orientation == "RIGHT":
+        #     rotated_view = np.rot90(view_slice, k=1, axes=(1, 0))
+        return view_slice
 
     def map_to_colors(self, mmap, color_map, rgb_arr, orientation="UP"):
         """Converts a map to an array of RGB values.
@@ -912,8 +912,8 @@ class MapEnv(MultiAgentEnv):
         return np.array(
             [
                 1
-                if (lower_lim <= agent_tup[0] <= upper_lim and left_lim <= agent_tup[1] <= right_lim)
-                else 0
+                # if (lower_lim <= agent_tup[0] <= upper_lim and left_lim <= agent_tup[1] <= right_lim)
+                # else 0
                 for agent_tup in other_agent_pos
             ],
             dtype=np.uint8,
