@@ -1,7 +1,7 @@
 import math
 
 import numpy as np
-from ray.rllib.agents.callbacks import DefaultCallbacks
+from ray.rllib.algorithms.callbacks import DefaultCallbacks
 
 from social_dilemmas.envs.agent import SwitchAgent
 from social_dilemmas.envs.gym.discrete_with_dtype import DiscreteWithDType
